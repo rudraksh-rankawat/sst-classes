@@ -12,6 +12,11 @@ function useWindowSize() {
     }
     useEffect(() => {
         window.addEventListener('resize', calcSize)
+
+        //listner hatao a necessary practice;
+        return (() => {
+            window.removeEventListener('resize', calcSize);
+        })
     }, [])
 
     return windowSize;
